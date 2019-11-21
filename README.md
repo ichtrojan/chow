@@ -6,7 +6,7 @@ This is a simple CLI package to parse slack user export from JSON to CSV.
 
 ## Installation
 
-You will find the installation instructions in the [releases page](https://github.com/ichtrojan/chow/releases)
+You will find the installation instructions in the [release page](https://github.com/ichtrojan/chow/releases)
 
 ## Usage 
 

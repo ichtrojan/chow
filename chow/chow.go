@@ -21,7 +21,7 @@ func HandleFunc(c *cli.Context) error {
 
 	if path == "" {
 		errorMessage := "No file specified: Please include a valid file"
-		// log.Fatal(errorMessage)
+		log.Fatal(errorMessage)
 		return errors.New(errorMessage)
 	}
 

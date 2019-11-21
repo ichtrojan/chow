@@ -34,7 +34,9 @@ func main() {
 			var format []UsersData
 			_ = json.Unmarshal(jsonByte, &format)
 
-			file, err := os.Create("./result.csv")
+			timestamp := time.Now()
+
+			file, err := os.Create("./chow_output" + timestamp.String() + ".csv")
 
 			if err != nil {
 				log.Fatal(err)

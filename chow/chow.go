@@ -6,7 +6,6 @@ import (
 	"errors"
 	"fmt"
 	"io/ioutil"
-	"log"
 	"os"
 	"time"
 
@@ -20,27 +19,29 @@ func HandleFunc(c *cli.Context) error {
 	path := c.Args().Get(0)
 
 	if path == "" {
-		errorMessage := "No file specified: Please include a valid file"
-		log.Fatal(errorMessage)
+		errorMessage := "No path specified: Please include a path."
 		return errors.New(errorMessage)
 	}
 
 	jsonByte, err := ioutil.ReadFile(path)
 
 	if err != nil {
-		log.Fatal(err)
 		return err
 	}
 
 	var format []UsersData
-	_ = json.Unmarshal(jsonByte, &format)
+	err = json.Unmarshal(jsonByte, &format)
+
+	if err != nil {
+		return err
+	}
 
 	timestamp := time.Now()
 
 	file, err := os.Create("./chow_output" + timestamp.String() + ".csv")
 
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 
 	w := csv.NewWriter(file)

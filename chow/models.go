@@ -1,5 +1,6 @@
-package main
+package chow
 
+// User represents information pertaining to a user
 type User struct {
 	ID                string   `json:"id"`
 	TeamID            string   `json:"team_id"`
@@ -23,6 +24,7 @@ type User struct {
 	Has2Fa            bool     `json:"has_2fa"`
 }
 
+// Profiles structure for more information relating to a user
 type Profiles struct {
 	Title                 string      `json:"title"`
 	Phone                 string      `json:"phone"`
@@ -47,6 +49,7 @@ type Profiles struct {
 	Team                  string      `json:"team"`
 }
 
+// Invite invitation information required by a user
 type Invite struct {
 	ID                string   `json:"id"`
 	TeamID            string   `json:"team_id"`
@@ -69,6 +72,7 @@ type Invite struct {
 	Has2Fa            bool     `json:"has_2fa"`
 }
 
+// UsersData representing information belonging to users in that workspace
 type UsersData struct {
 	ID         int64  `json:"id"`
 	Email      string `json:"email"`

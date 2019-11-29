@@ -10,9 +10,10 @@ import (
 
 func main() {
 	app := &cli.App{
-		Name:   "chow",
-		Usage:  "Parse the JSON file",
-		Action: chow.HandleFunc,
+		Name:    "chow",
+		Usage:   "Parse the JSON file",
+		Action:  chow.HandleFunc,
+		Version: "1.1",
 	}
 
 	err := app.Run(os.Args)

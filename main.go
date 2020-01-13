@@ -13,7 +13,7 @@ func main() {
 		Name:    "chow",
 		Usage:   "Parse the JSON file",
 		Action:  chow.HandleFunc,
-		Version: "1.1",
+		Version: "1.2.0",
 	}
 
 	err := app.Run(os.Args)

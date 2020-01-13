@@ -2,8 +2,18 @@
 
 GOOS=darwin GOARCH=386 go build -o chow_Darwin_386 main.go
 
+echo "macOS 32-bit ✅"
+
 GOOS=darwin GOARCH=amd64 go build -o chow_Darwin_x86_64 main.go
+
+echo "macOS 64-bit ✅"
 
 GOOS=linux GOARCH=amd64 go build -o chow_Linux_x86_64 main.go
 
+echo "Linux 32-bit ✅"
+
 GOOS=linux GOARCH=386 go build -o chow_Linux_386 main.go
+
+echo "Linux 64-bit ✅"
+
+echo "Chow built succesfully 🔥"
